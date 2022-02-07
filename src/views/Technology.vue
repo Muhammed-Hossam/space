@@ -1,6 +1,6 @@
 <!--  eslint-disable  -->
 <template>
-  <div class="home"></div>
+  <div class="tech"></div>
 </template>
 
 <script>
@@ -13,11 +13,11 @@ export default {
 
 
 <style lang="scss" scoped>
-.home {
+.tech {
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url('../assets/home/background-home-desktop.jpg');
+  background-image: url('../assets/technology/background-technology-desktop.jpg');
   background-size: cover;
   z-index: 0;
 }

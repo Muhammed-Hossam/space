@@ -1,6 +1,6 @@
 <!--  eslint-disable  -->
 <template>
-  <div class="home"></div>
+  <div class="destination"></div>
 </template>
 
 <script>
@@ -13,11 +13,11 @@ export default {
 
 
 <style lang="scss" scoped>
-.home {
+.destination {
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url('../assets/home/background-home-desktop.jpg');
+  background-image: url('../assets/destination/background-destination-desktop.jpg');
   background-size: cover;
   z-index: 0;
 }

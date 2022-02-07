@@ -1,12 +1,22 @@
+<!--  eslint-disable  -->
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <TheHeader />
   <router-view />
 </template>
 
+<script>
+/* eslint-disable */
+import TheHeader from "./components/layout/TheHeader.vue";
+export default {
+  components: {
+    TheHeader,
+  },
+};
+</script>
+
 <style lang="scss">
+@import "./sass/custom.scss";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

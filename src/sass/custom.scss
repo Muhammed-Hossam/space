@@ -1,0 +1,25 @@
+// Import Setup
+@import './setup/mixins';
+@import './setup/normalize';
+@import './setup/typography';
+@import './setup/variables';
+
+// Import Basics
+@import './basics/base';
+@import './basics/buttons';
+@import './basics/layout';
+@import './basics/links';
+
+// Import Components
+@import './components/header';
+
+// Import Views
+@import './views/home';
+@import './views/destination';
+@import './views/crew';
+@import './views/technologies';
+
+
+
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
