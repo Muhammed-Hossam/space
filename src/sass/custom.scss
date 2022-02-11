@@ -1,25 +1,15 @@
-// Import Setup
-@import './setup/mixins';
-@import './setup/normalize';
-@import './setup/typography';
-@import './setup/variables';
+// Import Breakpoints
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
 
-// Import Basics
-@import './basics/base';
-@import './basics/buttons';
-@import './basics/layout';
-@import './basics/links';
+
 
 // Import Components
 @import './components/header';
 
-// Import Views
-@import './views/home';
-@import './views/destination';
-@import './views/crew';
-@import './views/technologies';
 
 
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 
-@import "../node_modules/bootstrap/scss/bootstrap.scss";

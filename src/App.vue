@@ -17,6 +17,31 @@ export default {
 <style lang="scss">
 @import "./sass/custom.scss";
 
+html  {
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(96, 96, 96, 0.4);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(96, 96, 96, 0.7);
+  }
+  
+}
+
+body {
+  overflow: hidden;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
