@@ -1,8 +1,12 @@
 <!--  eslint-disable  -->
 <template>
   <div class="destination">
+    <div class="page-subject">
+      <span class="num">01</span>
+      <span class="subject">Pick Your Destination</span>
+    </div>
     <div
-      id="carouselExampleIndicators"
+      id="destCarousel"
       data-bs-interval="false"
       class="carousel slide"
       data-bs-ride="carousel"
@@ -13,7 +17,7 @@
             <a
               class="nav-link active"
               type="button"
-              data-bs-target="#carouselExampleIndicators"
+              data-bs-target="#destCarousel"
               data-bs-slide-to="0"
               aria-current="true"
               aria-label="Slide 1"
@@ -25,7 +29,7 @@
             <a
               class="nav-link"
               type="button"
-              data-bs-target="#carouselExampleIndicators"
+              data-bs-target="#destCarousel"
               data-bs-slide-to="1"
               aria-label="Slide 2"
               href="#"
@@ -36,9 +40,20 @@
             <a
               class="nav-link"
               type="button"
-              data-bs-target="#carouselExampleIndicators"
+              data-bs-target="#destCarousel"
               data-bs-slide-to="2"
               aria-label="Slide 3"
+              href="#"
+              >EUROPA</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              type="button"
+              data-bs-target="#destCarousel"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
               href="#"
               >TITAN</a
             >
@@ -46,27 +61,38 @@
         </ul>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="../assets/destination/image-moon.png"
-            class="d-block w-100"
-            alt="..."
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="../assets/destination/image-mars.png"
-            class="d-block w-100"
-            alt="..."
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="../assets/destination/image-titan.png"
-            class="d-block w-100"
-            alt="..."
-          />
-        </div>
+        <dest-slider
+          active="active"
+          :imgSrc="require('../assets/destination/image-moon.png')"
+          planetName="Moon"
+          :paragraph="moonParagraph"
+          distance="384,400 KM"
+          time="3 Days"
+        ></dest-slider>
+
+        <dest-slider
+          :imgSrc="require('../assets/destination/image-mars.png')"
+          planetName="Mars"
+          :paragraph="marsParagraph"
+          distance="225 Mil. km"
+          time="9 Months"
+        ></dest-slider>
+
+        <dest-slider
+          :imgSrc="require('../assets/destination/image-europa.png')"
+          planetName="Europa"
+          :paragraph="europaParagraph"
+          distance="628 Mil. km"
+          time="3 years"
+        ></dest-slider>
+
+        <dest-slider
+          :imgSrc="require('../assets/destination/image-titan.png')"
+          planetName="Titan"
+          :paragraph="titanParagraph"
+          distance="1.6 Bil. km"
+          time="7 years"
+        ></dest-slider>
       </div>
     </div>
   </div>
@@ -74,13 +100,33 @@
 <!-- eslint-disable -->
 <script>
 /* eslint-disable */
+import DestSlider from "../components/DestSliderContent.vue";
+
 export default {
   name: "Destination",
-  components: {},
+  components: {
+    DestSlider,
+  },
+  computed: {
+    moonParagraph() {
+      return "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.";
+    },
+    marsParagraph() {
+      return "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!";
+    },
+    europaParagraph() {
+      return "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.";
+    },
+    titanParagraph() {
+      return "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.";
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
+
 // Mobile First
 .destination {
   position: relative;
@@ -92,22 +138,75 @@ export default {
   z-index: 0;
   overflow: auto;
 
-  .carousel-indicators {
-    .nav {
-      .nav-item {
-        a {
-          width: auto;
-          height: auto;
-          text-indent: 0 !important;
-          background-color: transparent;
-        }
-      }
+  .page-subject {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5rem;
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 2.7px;
+
+    .num {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #777;
+    }
+
+    .subject {
+      font-size: 1rem;
+      color: #eee;
+      margin-left: 1rem;
+      text-transform: uppercase;
     }
   }
 
-  .carousel-item {
-    width: 30rem;
-    height: 30rem;
+  .carousel {
+    top: 9rem;
+    .carousel-inner {
+      height: 100%;
+      overflow: initial;
+    }
+    .carousel-indicators {
+      top: 12rem;
+      width: 100%;
+      margin-left: 0;
+      height: fit-content;
+      .nav {
+        width: 100%;
+        flex-wrap: nowrap;
+        .nav-item {
+          a {
+            font-family: "Barlow Condensed", sans-serif;
+            width: auto;
+            height: auto;
+            text-indent: 0 !important;
+            background-color: transparent;
+            color: #d0d6f9;
+            font-size: 14px;
+            letter-spacing: 2.36px;
+            text-transform: uppercase;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-width: 3px;
+            padding-bottom: 5px;
+
+            &:hover {
+              border-bottom-color: gray !important;
+              transition: all 0.7s ease-in-out;
+            }
+
+            &.active {
+              border-bottom-color: white;
+
+              &:hover {
+                border-bottom-color: white !important;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -117,6 +216,28 @@ export default {
     background: url("../assets/destination/background-destination-tablet.jpg")
       no-repeat !important;
     background-size: cover !important;
+
+    .page-subject {
+      left: 0;
+      transform: translateX(0);
+      top: 6rem;
+      text-align: start;
+      margin-left: 2rem;
+      display: inline !important;
+      width: auto;
+
+      span {
+        font-size: 20px;
+      }
+    }
+    .carousel {
+      top: 11rem;
+      height: calc(100% - 11rem);
+
+      .carousel-indicators {
+        top: 21rem;
+      }
+    }
   }
 }
 
@@ -126,6 +247,38 @@ export default {
     background: url("../assets/destination/background-destination-desktop.jpg")
       no-repeat !important;
     background-size: cover !important;
+
+    .page-subject {
+      left: 5.40625rem;
+      transform: translateX(0);
+      top: 10.25rem;
+      text-align: start;
+      margin-left: 2rem;
+      display: inline !important;
+      width: auto;
+
+      span {
+        font-size: 1.75rem !important;
+      }
+    }
+
+    .carousel {
+      .carousel-indicators {
+        top: 5rem;
+        display: inline-block;
+        width: auto;
+        position: absolute;
+        right: -2rem;
+        .nav {
+          justify-content: flex-end !important;
+          .nav-item {
+            .nav-link {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
 </style>
