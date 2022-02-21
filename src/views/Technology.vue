@@ -1,13 +1,18 @@
 <!--  eslint-disable  -->
 <template>
-  <div class="tech"></div>
+  <div class="tech">
+    <page-subject num="03" subject="Space Lanuch 101"></page-subject>
+  </div>
 </template>
-
+<!-- eslint-disable -->
 <script>
+import PageSubject from '../components/PageSubject.vue';
 /* eslint-disable */
 export default {
   name: "Tech",
-  components: {},
+  components: {
+    PageSubject
+  },
 };
 </script>
 

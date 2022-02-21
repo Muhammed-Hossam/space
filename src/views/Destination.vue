@@ -1,10 +1,7 @@
 <!--  eslint-disable  -->
 <template>
   <div class="destination">
-    <div class="page-subject">
-      <span class="num">01</span>
-      <span class="subject">Pick Your Destination</span>
-    </div>
+    <page-subject num="01" subject="Pick your Destination"></page-subject>
     <div
       id="destCarousel"
       data-bs-interval="false"
@@ -61,38 +58,38 @@
         </ul>
       </div>
       <div class="carousel-inner">
-        <dest-slider
+        <carousel-item
           active="active"
           :imgSrc="require('../assets/destination/image-moon.png')"
           planetName="Moon"
           :paragraph="moonParagraph"
           distance="384,400 KM"
           time="3 Days"
-        ></dest-slider>
+        ></carousel-item>
 
-        <dest-slider
+        <carousel-item
           :imgSrc="require('../assets/destination/image-mars.png')"
           planetName="Mars"
           :paragraph="marsParagraph"
           distance="225 Mil. km"
           time="9 Months"
-        ></dest-slider>
+        ></carousel-item>
 
-        <dest-slider
+        <carousel-item
           :imgSrc="require('../assets/destination/image-europa.png')"
           planetName="Europa"
           :paragraph="europaParagraph"
           distance="628 Mil. km"
           time="3 years"
-        ></dest-slider>
+        ></carousel-item>
 
-        <dest-slider
+        <carousel-item
           :imgSrc="require('../assets/destination/image-titan.png')"
           planetName="Titan"
           :paragraph="titanParagraph"
           distance="1.6 Bil. km"
           time="7 years"
-        ></dest-slider>
+        ></carousel-item>
       </div>
     </div>
   </div>
@@ -100,12 +97,14 @@
 <!-- eslint-disable -->
 <script>
 /* eslint-disable */
-import DestSlider from "../components/DestSliderContent.vue";
+import CarouselItem from "../components/DestSliderItem.vue";
+import PageSubject from "../components/PageSubject.vue";
 
 export default {
   name: "Destination",
   components: {
-    DestSlider,
+    CarouselItem,
+    PageSubject,
   },
   computed: {
     moonParagraph() {
@@ -137,29 +136,6 @@ export default {
   background-size: cover;
   z-index: 0;
   overflow: auto;
-
-  .page-subject {
-    position: absolute;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 5rem;
-    font-family: "Barlow Condensed", sans-serif;
-    letter-spacing: 2.7px;
-
-    .num {
-      font-size: 1rem;
-      font-weight: bold;
-      color: #777;
-    }
-
-    .subject {
-      font-size: 1rem;
-      color: #eee;
-      margin-left: 1rem;
-      text-transform: uppercase;
-    }
-  }
 
   .carousel {
     top: 9rem;
@@ -217,19 +193,6 @@ export default {
       no-repeat !important;
     background-size: cover !important;
 
-    .page-subject {
-      left: 0;
-      transform: translateX(0);
-      top: 6rem;
-      text-align: start;
-      margin-left: 2rem;
-      display: inline !important;
-      width: auto;
-
-      span {
-        font-size: 20px;
-      }
-    }
     .carousel {
       top: 11rem;
       height: calc(100% - 11rem);
@@ -247,20 +210,6 @@ export default {
     background: url("../assets/destination/background-destination-desktop.jpg")
       no-repeat !important;
     background-size: cover !important;
-
-    .page-subject {
-      left: 5.40625rem;
-      transform: translateX(0);
-      top: 10.25rem;
-      text-align: start;
-      margin-left: 2rem;
-      display: inline !important;
-      width: auto;
-
-      span {
-        font-size: 1.75rem !important;
-      }
-    }
 
     .carousel {
       .carousel-indicators {
