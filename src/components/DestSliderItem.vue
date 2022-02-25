@@ -1,13 +1,13 @@
 <!-- eslint-disable -->
 <template>
   <div class="carousel-item" :class="active">
-    <div class="carousel-img">
+    <div class="carousel-img m-auto">
       <img :src="imgSrc" class="d-block w-100" alt="..." />
     </div>
     <div class="content">
-      <h1>{{ planetName }}</h1>
-      <p>{{ paragraph }}</p>
-      <hr />
+      <h1 class="text-white text-uppercase mb-3">{{ planetName }}</h1>
+      <p class="m-auto mb-3">{{ paragraph }}</p>
+      <hr class="m-auto" />
       <div class="info">
         <div class="avg">
           <span>AVG. Distance</span>
@@ -55,37 +55,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
-
 // Mobile First
 .carousel-item {
 
   .carousel-img {
     width: 10.625rem;
     height: 10.625rem;
-    margin: auto;
   }
   h1 {
     font-family: "Bellefair", serif;
     font-size: 3.5rem;
-    color: white;
     margin-top: 5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
   }
   p {
     font-family: "Barlow", sans-serif;
     color: #d0d6f9;
-    display: block;
     width: 21rem;
-    margin: auto;
   }
   hr {
     width: 90%;
     background-color: #eee;
-    margin: auto;
     margin-top: 2rem;
     height: 1px;
   }

@@ -1,14 +1,14 @@
 <!-- eslint-disable -->
 <template>
   <div class="carousel-item" :class="active">
-    <div class="carousel-img">
+    <div class="carousel-img m-auto">
       <img :src="imgSrc" class="d-block w-100" alt="..." />
     </div>
-    <hr class="d-sm-none" />
-    <div class="content">
-      <span class="job"> {{ job }} </span>
-      <span class="name"> {{ name }} </span>
-      <p class="description">{{ description }}</p>
+    <hr class="d-sm-none mx-auto opacity-50" />
+    <div class="content text-white mb-3">
+      <span class="job d-block text-uppercase fs-6 opacity-50"> {{ job }} </span>
+      <span class="name d-block text-uppercase fs-4 mb-3"> {{ name }} </span>
+      <p class="description fs-6 my-0 mx-auto">{{ description }}</p>
     </div>
   </div>
 </template>
@@ -30,9 +30,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
-
 // Mobile First
 .carousel-item {
   &:nth-of-type(2) {
@@ -56,41 +53,25 @@ export default {
   .carousel-img {
     width: 11.0625rem;
     height: fit-content;
-    margin: auto;
     margin-bottom: -1rem;
   }
   hr {
-    opacity: 0.5;
     color: #aaa;
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
   }
   .content {
-    color: white;
     margin-top: 6rem;
 
     span {
       font-family: "Bellefair", serif;
-      display: block;
-      text-transform: uppercase;
 
       &.job {
-        font-size: 1rem;
-        color: #fff;
-        opacity: 0.5;
         line-height: 1.14375rem;
-      }
-      &.name {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
       }
     }
     .description {
       font-family: "Barlow", sans-serif;
-      font-size: 1rem;
       width: 22rem;
-      margin: 0 auto;
       line-height: 1.5625rem;
       color: #d0d6f9;
     }
@@ -107,7 +88,7 @@ export default {
       left: 50%;
       transform: translateX(-50%);
       width: 28.523125rem !important;
-      height: 35.75rem;
+      height: 35.75rem !important;
       bottom: 0;
     }
 
@@ -119,17 +100,17 @@ export default {
 
     .content {
       span.job {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
       }
       span.name {
-        font-size: 2.5rem;
+        font-size: 2.5rem !important;
       }
     }
 
     &:first-of-type {
       .content {
         .description {
-          width: 29rem;
+          width: 29rem !important;
         }
       }
     }
@@ -177,20 +158,20 @@ export default {
     }
 
     .content {
-      display: inline-block;
+      display: inline-block !important;
       position: absolute;
       left: 7rem;
       top: 8rem;
       margin-top: 0;
 
       span.job {
-        font-size: 2rem;
-        line-height: 2.25rem;
+        font-size: 2rem !important;
+        line-height: 2.25rem !important;
         text-align: start;
       }
       span.name {
-        font-size: 3.5rem;
-        line-height: 4rem;
+        font-size: 3.5rem !important;
+        line-height: 4rem !important;
         text-align: start;
         font-weight: 400;
       }
@@ -198,8 +179,10 @@ export default {
         width: 27rem;
         text-align: start;
         margin: 0;
-        font-size: 1.125rem;
+        font-size: 1.125rem !important;
         line-height: 2rem;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
       }
     }
   }

@@ -17,6 +17,10 @@ export default {
 <style lang="scss">
 @import "./sass/custom.scss";
 
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+
 html  {
   
   ::-webkit-scrollbar {

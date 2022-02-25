@@ -1,6 +1,6 @@
 <!--  eslint-disable  -->
 <template>
-  <div class="tech">
+  <div class="tech position-absolute w-100 vh-100 overflow-auto">
     <page-subject num="03" subject="Space Lanuch 101"></page-subject>
 
     <div
@@ -14,7 +14,7 @@
           type="button"
           data-bs-target="#techCarousel"
           data-bs-slide-to="0"
-          class="active"
+          class="active rounded-circle opacity-100"
           aria-current="true"
           aria-label="Slide 1"
         >
@@ -24,6 +24,7 @@
           type="button"
           data-bs-target="#techCarousel"
           data-bs-slide-to="1"
+          class="rounded-circle opacity-100"
           aria-label="Slide 2"
         >
           2
@@ -32,6 +33,7 @@
           type="button"
           data-bs-target="#techCarousel"
           data-bs-slide-to="2"
+          class="rounded-circle opacity-100"
           aria-label="Slide 3"
         >
           3
@@ -86,18 +88,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
-
 // Mobile First
 .tech {
-  position: relative;
-  width: 100%;
-  height: 100vh;
   background: url("../assets/technology/background-technology-mobile.jpg")
     no-repeat;
   background-size: cover;
   z-index: 0;
-  overflow: auto;
 
   #techCarousel {
     margin-top: 9rem;
@@ -114,11 +110,9 @@ export default {
         text-indent: 0;
         width: 2.5rem;
         height: 2.5rem;
-        border-radius: 50%;
         background: transparent;
         border: 1px solid rgba(255, 255, 255, 0.3);
         color: #fff;
-        opacity: 1;
         font-size: 1rem;
 
         &.active {

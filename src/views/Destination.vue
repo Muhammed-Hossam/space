@@ -1,6 +1,6 @@
 <!--  eslint-disable  -->
 <template>
-  <div class="destination">
+  <div class="destination position-relative w-100 vh-100 overflow-auto">
     <page-subject num="01" subject="Pick your Destination"></page-subject>
     <div
       id="destCarousel"
@@ -124,18 +124,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
-
 // Mobile First
 .destination {
-  position: relative;
-  width: 100%;
-  height: 100vh;
   background: url("../assets/destination/background-destination-mobile.jpg")
     no-repeat;
   background-size: cover;
   z-index: 0;
-  overflow: auto;
 
   .carousel {
     top: 9rem;
@@ -210,6 +204,7 @@ export default {
     background: url("../assets/destination/background-destination-desktop.jpg")
       no-repeat !important;
     background-size: cover !important;
+    
 
     .carousel {
       .carousel-indicators {

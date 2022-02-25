@@ -1,14 +1,14 @@
 <!-- eslint-disable -->
 <template>
   <div class="carousel-item" :class="active">
-    <div class="carousel-img">
-      <div class="img"></div>
+    <div class="carousel-img w-100">
+      <div class="img w-100 h-100"></div>
     </div>
     <div class="content">
-      <span class="term">The Terminology ...</span>
-      <span class="steps">{{ step }}</span>
-      <div class="paragraph">
-        <p>{{ paragraph }}</p>
+      <span class="term d-block text-uppercase">The Terminology ...</span>
+      <span class="steps d-block text-uppercase fs-4">{{ step }}</span>
+      <div class="paragraph mt-3">
+        <p class="text-center m-auto">{{ paragraph }}</p>
       </div>
     </div>
   </div>
@@ -29,18 +29,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
-
 .carousel-item {
   .carousel-img {
-    width: 100%;
     height: 10.625rem;
     margin-bottom: 8rem;
 
     .img {
-      width: 100%;
-      height: 100%;
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -68,9 +62,8 @@ export default {
   }
 
   .content {
+    margin-bottom: 1rem;
     span {
-      display: block;
-      text-transform: uppercase;
       margin-bottom: 0.625rem;
       &.term {
         font-family: "Barlow Condensed", sans-serif;
@@ -80,19 +73,15 @@ export default {
       }
       &.steps {
         font-family: "Bellefair", serif;
-        font-size: 24px;
       }
     }
     .paragraph {
-      margin-top: 1rem;
       p {
         font-family: "Barlow Condensed", sans-serif;
         font-size: 0.9375rem;
-        text-align: center;
         line-height: 1.5625rem;
         color: #d0d6f9;
         width: 21.8rem;
-        margin: auto;
       }
     }
   }
@@ -108,11 +97,11 @@ export default {
       margin-top: 9rem;
 
       span.term {
-        font-size: 1rem;
+        font-size: 1rem !important;
         letter-spacing: 2.7px;
       }
       span.steps {
-        font-size: 2.5rem;
+        font-size: 2.5rem !important;
       }
       .paragraph {
         p {
@@ -133,7 +122,7 @@ export default {
       position: absolute;
       right: 0;
       top: 3rem;
-      width: 25.1875rem;
+      width: 25.1875rem !important;
       height: 25.9375rem;
 
       .img {
@@ -170,16 +159,16 @@ export default {
       position: absolute;
       left: 14rem;
       top: 8rem;
-      text-align: start;
+      text-align: start !important;
 
       span.steps {
-        font-size: 3.5rem;
+        font-size: 3.5rem !important;
       }
       .paragraph {
         p {
           width: 22.4rem;
-          text-align: start;
-          margin: 0;
+          text-align: start !important;
+          margin: 0 !important;
         }
       }
     }

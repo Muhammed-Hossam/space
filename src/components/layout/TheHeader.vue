@@ -93,8 +93,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
-
 header {
   .logo {
     position: absolute;

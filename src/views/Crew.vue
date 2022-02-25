@@ -1,6 +1,6 @@
 <!--  eslint-disable  -->
 <template>
-  <div class="crew">
+  <div class="crew w-100 vh-100 overflow-auto">
     <page-subject num="02" subject="Meet Your Crew"></page-subject>
 
     <div
@@ -9,12 +9,12 @@
       data-bs-ride="carousel"
       data-bs-interval="false"
     >
-      <div class="carousel-indicators">
+      <div class="carousel-indicators position-absolute">
         <button
           type="button"
           data-bs-target="#crewCarousel"
           data-bs-slide-to="0"
-          class="active"
+          class="active rounded-circle"
           aria-current="true"
           aria-label="Slide 1"
         ></button>
@@ -22,18 +22,21 @@
           type="button"
           data-bs-target="#crewCarousel"
           data-bs-slide-to="1"
+          class="rounded-circle"
           aria-label="Slide 2"
         ></button>
         <button
           type="button"
           data-bs-target="#crewCarousel"
           data-bs-slide-to="2"
+          class="rounded-circle"
           aria-label="Slide 3"
         ></button>
         <button
           type="button"
           data-bs-target="#crewCarousel"
           data-bs-slide-to="3"
+          class="rounded-circle"
           aria-label="Slide 4"
         ></button>
       </div>
@@ -106,17 +109,14 @@ export default {
 <style lang="scss" scoped>
 // Mobile First
 .crew {
-  width: 100%;
-  height: 100vh;
   background: url("../assets/crew/background-crew-mobile.jpg") no-repeat;
   background-size: cover;
-  overflow: auto;
+
 
   #crewCarousel {
     top: 9rem;
 
     .carousel-indicators {
-      position: absolute;
       top: 17rem;
       margin: 0 auto !important;
       height: fit-content;
@@ -124,7 +124,6 @@ export default {
       button {
         width: 1rem;
         height: 1rem;
-        border-radius: 50%;
       }
     }
   }

@@ -1,12 +1,12 @@
 <!--  eslint-disable  -->
 <template>
-  <div class="home">
-    <div class="container">
+  <div class="home position-relative w-100 vh-100 overflow-auto">
+    <div class="container position-absolute">
       <div class="content">
-        <h6>So, You Want To Travel To</h6>
-        <h1>Space</h1>
+        <h6 class="fs-3 text-uppercase">So, You Want To Travel To</h6>
+        <h1 class="text-white text-uppercase mt-3 mb-5">Space</h1>
         <div class="paragraph">
-          <p>
+          <p class="m-auto">
             Let’s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
             Well sit back, and relax because we’ll give you a truly out of this
@@ -14,7 +14,11 @@
           </p>
         </div>
       </div>
-      <router-link class="exploreBtn" to="/destination">Explore</router-link>
+      <router-link
+        class="exploreBtn d-inline-block text-decoration-none bg-white rounded-circle text-uppercase text-center fs-5 mb-3 fw-light"
+        to="/destination"
+        >Explore</router-link
+      >
     </div>
   </div>
 </template>
@@ -28,10 +32,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
-
 @keyframes pulse {
   from {
     box-shadow: 0 0 0 #aaaaaa;
@@ -40,17 +40,11 @@ export default {
 
 // Mobile First
 .home {
-  position: relative;
-  width: 100%;
-  height: 100vh;
   background: url("../assets/home/background-home-mobile.jpg") no-repeat;
   background-size: cover;
   z-index: 0;
-  overflow: auto;
-
 
   .container {
-    position: absolute;
     top: 9rem;
 
     h6,
@@ -59,43 +53,28 @@ export default {
     }
     h1 {
       font-family: "Bellefair", serif;
-      color: white;
       font-size: 5rem;
       line-height: 6.25rem;
-      text-transform: uppercase;
-      margin-top: 1rem;
-      margin-bottom: 3rem;
     }
     h6 {
       font-family: "Barlow Condensed", sans-serif;
-      font-size: 1rem;
       letter-spacing: 2.7px;
-      text-transform: uppercase;
     }
     .paragraph {
       p {
         font-family: "Barlow", sans-serif;
-        font-size: 15px;
-        line-height: 25px;
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
         width: 20rem;
-        margin: auto;
       }
     }
 
     .exploreBtn {
-      display: inline-block;
-      text-decoration: none;
       margin-top: 10rem;
       width: 10rem;
       height: 10rem;
-      background-color: white;
       color: #0b0d17;
-      border-radius: 50%;
       line-height: 10rem;
-      font-size: 20px;
-      text-transform: uppercase;
-      font-weight: 100;
-      text-align: center;
 
       &:hover {
         box-shadow: 0 0 0 3rem transparent;
@@ -117,16 +96,16 @@ export default {
       transform: translateX(-50%);
 
       h6 {
-        font-size: 1.25rem;
+        font-size: 1.25rem !important;
       }
       h1 {
         font-size: 9.375rem;
         letter-spacing: 3.38px;
-        margin-top: 4rem;
+        margin-top: 4rem !important;
       }
       .paragraph {
         p {
-          width: 25.5rem;
+          width: 25.5rem !important;
         }
       }
     }
@@ -152,12 +131,12 @@ export default {
         }
         h1 {
           font-size: 9.375rem;
-          margin-top: 3rem;
+          margin-top: 3rem !important;
         }
         .paragraph {
           p {
-            font-size: 1.125rem;
-            width: 28rem;
+            font-size: 1.125rem !important;
+            width: 28rem !important;
             text-align: start;
           }
         }
