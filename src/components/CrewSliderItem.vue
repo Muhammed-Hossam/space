@@ -4,7 +4,7 @@
     <div class="carousel-img m-auto">
       <img :src="imgSrc" class="d-block w-100" alt="..." />
     </div>
-    <hr class="d-sm-none mx-auto opacity-50" />
+    <hr class="d-sm-none my-0 mx-auto opacity-50" />
     <div class="content text-white mb-3">
       <span class="job d-block text-uppercase fs-6 opacity-50"> {{ job }} </span>
       <span class="name d-block text-uppercase fs-4 mb-3"> {{ name }} </span>
@@ -94,7 +94,7 @@ export default {
 
     &:nth-of-type(3) {
       .carousel-img {
-        width: 29.5rem !important;
+        width: 30.5rem !important;
       }
     }
 
