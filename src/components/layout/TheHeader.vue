@@ -94,6 +94,13 @@ export default {
 
 <style lang="scss" scoped>
 header {
+  @supports (backdrop-filter: blur(81.55px)) {
+    nav {
+      background-color: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(81.55px);
+    }
+  }
+
   .logo {
     position: absolute;
     z-index: 1000;
@@ -104,8 +111,6 @@ header {
   nav {
     z-index: 100;
     font-family: "Barlow Condensed", "sans-serif";
-    background-color: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(81.55px);
     padding-left: 5rem;
     padding-right: 5rem;
     top: 0;
@@ -152,23 +157,22 @@ header {
       }
     }
   }
-  // &::after {
-  //   content: "";
-  //   display: inline-block;
-  //   position: absolute;
-  //   z-index: 1100;
-  //   height: 1px;
-  //   background-color: gray;
-  //   width: 35rem;
-  //   top: 4.5rem;
-  //   left: 10.3125rem;
-  //   visibility: hidden;
-  // }
 
   /* Start Media Query */
 
   // For Mobile
   @media (max-width: 575px) {
+    @supports (not (-webkit-text-size-adjust: 100%)) and
+      (not (-webkit-backdrop-filter: blur(81.55px))) {
+      .bg-blur {
+        background: linear-gradient(
+          to right,
+          #859398,
+          #283048
+        ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+    }
+
     nav {
       background-color: transparent;
       backdrop-filter: none;
@@ -223,6 +227,19 @@ header {
     }
     nav {
       top: 2rem;
+    }
+  }
+
+  @media (min-width: 576px) {
+    @supports (not (-webkit-text-size-adjust: 100%)) and
+      (not (-webkit-backdrop-filter: blur(81.55px))) {
+      nav {
+        background: linear-gradient(
+          to right,
+          #859398,
+          #283048
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
     }
   }
 
