@@ -1,5 +1,10 @@
+/* eslint-disable prettier/prettier */
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
+import Destination from "../views/Destination.vue";
+import Crew from "../views/Crew.vue";
+import Tech from "../views/Technology.vue";
+
 
 const routes = [
   { path: "/", redirect: "/home" },
@@ -11,17 +16,17 @@ const routes = [
   {
     path: "/destination",
     name: "Destination",
-    component: () => import("../views/Destination.vue"),
+    component: Destination,
   },
   {
     path: "/crew",
     name: "Crew",
-    component: () => import("../views/Crew.vue"),
+    component: Crew,
   },
   {
     path: "/tech",
     name: "Technology",
-    component: () => import("../views/Technology.vue"),
+    component: Tech,
   },
 ];
 
